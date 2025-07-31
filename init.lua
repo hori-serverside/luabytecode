@@ -1,3 +1,4 @@
+-- ModuleScript, LuaBytecode.luau
 return {
 	ClientExecute = function(self, ui, player, contents) 
 		local codeRemote
