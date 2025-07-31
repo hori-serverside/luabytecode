@@ -1,4 +1,4 @@
--- ModuleScript, LuaBytecodeInterpreter.luau
+-- ModuleScript, LuaBytecode.luau/LuaBytecodeInterpreter.luau
 
 function opcode21(inst, stack, debugging, proto, module, upvals, interruptHook, top)if interruptHook then interruptHook(stack, debugging, proto, module, upvals) end;local A, B, C = inst.A, inst.B, inst.C;local params = if B == 0 then top - A else B - 1;local func = stack[A]local ret_list = table.pack(func(table.unpack(stack, A + 1, A + params)))local ret_num = ret_list.n if C == 0 then top = A + ret_num - 1 else ret_num = C - 1 end table.move(ret_list, 1, ret_num, A, stack)end
 
